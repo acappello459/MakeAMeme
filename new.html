@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Templates</title>
+    <link rel="stylesheet" href="new.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="images/patton.ico">
+
+  </head>
+  <body>
+    <div class="banner">
+      <div id="navbar">
+          <nav>
+            <a href="index.html"> <li>Home</li></a>
+            <a href="popular.html"> <li>Popular</li></a>
+            <a href="create.html"> <li>Create</li></a>
+          </nav>
+        </div>
+    </div>
+    <!-- navbar to take you to any of the pages that you are not currently on -->
+
+<div class="container">
+
+
+      <!-- Wrapper that holds the canvas and buttons to create/clear -->
+    <div class="generate-wrapper">
+        <input id='create' type="submit" name="" value="GENERATE">
+        <canvas id="meme-canvas" width="400" height="400"></canvas>
+        <button id="clearButt" type="button" name="button">CLEAR</button>
+    </div>
+
+    <div class="text-wrapper">
+
+        <div class='top-text-div'><textarea id='topText' type="text" rows="5" placeholder="Top Text"></textarea>
+          <input id='topTextSize' type="range" list="tickmarks">
+        </div>
+
+        <div class='bottom-text-div'><textarea id='bottomText' type="text" rows="5" placeholder="Bottom Text"></textarea>
+          <input id='bottomTextSize' type="range" list="tickmarks">
+        </div>
+    </div>
+</div>
+
+<!-- tickmarks for the font size range inputs -->
+  <datalist id="tickmarks">
+    <option value="5">
+    <option value="10">
+    <option value="20">
+    <option value="30">
+    <option value="40">
+    <option value="50">
+    <option value="60">
+    <option value="70">
+    <option value="80">
+    <option value="90">
+    <option value="100">
+  </datalist>
+
+
+
+
+    <script type="text/javascript" src='new.js'></script>
+  </body>
+</html>
