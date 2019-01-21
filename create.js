@@ -56,7 +56,7 @@ $.ajax({url: "http://version1.api.memegenerator.net//Generators_Search?q=&pageIn
         })
   }
 
-
+//grabs the info from the API and creates an img element for each of the 25 responses, and sets their attributes
   function createImage(array){
     document.body.appendChild(wrapper)
     wrapper.id = 'wrapper'
@@ -75,14 +75,13 @@ $.ajax({url: "http://version1.api.memegenerator.net//Generators_Search?q=&pageIn
 
   }
 
-
+//creates an event listener on each of the images that populate the wrapper
   function getImgInfo(array){
 
     let images = document.getElementsByClassName("images")
     for(let i  = 0;i<images.length;i++){
       images[i].addEventListener('click', function(){
         var src = array[i].imageUrl
-
         drawImage(src, 0, 0)
       })
     }
@@ -90,55 +89,11 @@ $.ajax({url: "http://version1.api.memegenerator.net//Generators_Search?q=&pageIn
 
   //populates the canvas with the selected meme by the user
   function drawImage(imgSrc, x, y){
-    var myImg = new Image(400, 400);
+    var myImg = new Image();
     ctx.clearRect(0, 0, memeCanvas.width, memeCanvas.height)
     myImg.src = imgSrc;
     ctx.drawImage(myImg, x, y, memeCanvas.width, memeCanvas.height);
   }
-
-  function uploadImage(imgSrc, x, y){
-    ctx.drawImage(imgSrc, x, y, memeCanvas.width, memeCanvas.height);
-
-  }
-
-// function grabFile(){
-//   let reader = new FileReader();
-//   reader.onload = function(){
-//     let img = new Image();
-//     img.src = reader.result;
-//   }
-//
-//   reader.addEventListener('load', function(){
-//     let src = reader.result
-//     reader.readAsDataURL(imageInput.files[0]);
-//     uploadImage(src, 0, 0)
-//   })
-// }
-
-function grabFile(){
-  let reader = new FileReader();
-  reader.onload = function(){
-    let img = new Image;
-    img.src = reader.result;
-    uploadImage(img)
-  }
-  reader.readAsDataURL(imageInput.files[0])
-}
-
-// function previewFile() {
-//   var file    = document.querySelector('input[type=file]').files[0];
-//   var reader  = new FileReader();
-//
-//   reader.addEventListener("load", function () {
-//   uploadImage(reader.result, 0, 0, 400, 400)
-//
-//   }, false);
-//
-//   if (file) {
-//     reader.readAsDataURL(file);
-//     uploadImage(reader.result, 0, 0, 400, 400)
-//   }
-// }
 
 
   //populates the meme with the text that the user inputs

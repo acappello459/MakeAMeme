@@ -56,7 +56,7 @@ if (wrapper.innerHTML != ('')){
 }
 
 
-
+//grabs the info from the API and creates an img element for each of the 25 responses, and sets their attributes
 function createImage(array){
   document.body.appendChild(wrapper)
   wrapper.id = 'wrapper'
@@ -75,7 +75,7 @@ function createImage(array){
 
 }
 
-
+//creates an event listener on each of the images that populate the wrapper
 function getImgInfo(array){
 
   let images = document.getElementsByClassName("images")
